@@ -1,0 +1,74 @@
+.App {
+  max-width: 80vw;
+  background-color: rgb(15, 15, 84);
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
+.title {
+  padding: 1rem 0;
+  font-size: 3rem;
+}
+
+.tile {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid black;
+}
+
+.grid {
+  display: flex;
+}
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px solid salmon;
+  padding: 1rem;
+  min-width: 24rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.puzzle {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.logBox {
+  border: 1px solid salmon;
+  min-width: 24rem;
+  overflow: hidden;
+  padding: 1rem;
+  height: 34rem;
+}
+.btn {
+  margin-top: 1.5rem;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.logItem {
+  padding: 1rem 0.5rem;
+  background-color: coral;
+  margin: 0.5rem;
+}
+
+.logs {
+  display: flex;
+  flex-direction: column-reverse;
+}
