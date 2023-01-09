@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function Grid({ size }) {
+function Grid() {
   const [hoveredTiles, setHoveredTiles] = useState(new Set());
   const [log, setLog] = useState([]);
+  const [options, setOptions] = useState([]);
+  const [size, setSize] = useState(5);
 
   function handleMouseEnter(event) {
     const id = event.target.id;
@@ -16,9 +18,9 @@ function Grid({ size }) {
   }
 
   const grid = [];
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < size / 5; i++) {
     const columns = [];
-    for (let j = 0; j < size; j++) {
+    for (let j = 0; j < 5; j++) {
       const id = `${i}-${j}`;
       columns.push(
         <div
@@ -39,9 +41,32 @@ function Grid({ size }) {
     );
   }
 
+  useEffect(() => {
+    fetch("https://demo7919674.mockable.io/")
+      .then((res) => res.json())
+      .then((data) => {
+        setOptions(data);
+        console.log(data);
+      });
+  }, []);
+
+  function onChangeSelect(e) {
+    console.log(e.target.value);
+    setSize(e.target.value);
+  }
+
   return (
     <div className="puzzle">
       <div className="container">
+        <select className="select" value={size} onChange={onChangeSelect}>
+          {options.map((i) => {
+            return (
+              <option key={i.name} value={i.field} className="option">
+                {`Level: ${i.name}, fields: ${i.field}`}
+              </option>
+            );
+          })}
+        </select>
         <div className="puzzleBox">{grid}</div>
         <button className="btn" onClick={handleClear}>
           Clear

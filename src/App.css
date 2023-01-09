@@ -50,8 +50,7 @@
   height: 34rem;
 }
 .btn {
-  margin-top: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   padding: 1rem 3rem;
   text-align: center;
 }
@@ -71,4 +70,10 @@
 .logs {
   display: flex;
   flex-direction: column-reverse;
+}
+
+.select {
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
 }
