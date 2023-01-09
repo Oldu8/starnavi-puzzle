@@ -1,5 +1,18 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+  list-style: none;
+}
+
 .App {
-  max-width: 80vw;
   background-color: rgb(15, 15, 84);
   margin: 0 auto;
   color: white;
@@ -10,6 +23,9 @@
   justify-content: center;
   flex-flow: column nowrap;
   min-height: 100vh;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .title {
@@ -31,7 +47,7 @@
   flex-flow: column nowrap;
   border: 1px solid salmon;
   padding: 1rem;
-  min-width: 24rem;
+  min-width: 20rem;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -40,19 +56,27 @@
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .logBox {
   border: 1px solid salmon;
-  min-width: 24rem;
+  min-width: 20rem;
   overflow: hidden;
   padding: 1rem;
-  height: 34rem;
+  height: 25.5rem;
+  @media (max-width: 768px) {
+    height: 21.5rem;
+  }
 }
+
 .btn {
   border-radius: 1rem;
   padding: 1rem 3rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .subtitle {
@@ -76,4 +100,5 @@
   border-radius: 1rem;
   padding: 1rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
